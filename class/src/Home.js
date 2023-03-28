@@ -53,8 +53,11 @@ class Home extends Component{
           return next})
         return(<>
         <div className='container mt-3'>
-      
-       <Country countrys={currentCountry} loading={this.state.loading}/>
+        {currentCountry.map((value, index)=>{
+          return(
+       <Country key ={id} name={value.name} capital={value.capital} loading={this.state.loading}/>
+          )
+        })}
        <Pagination   limit={this.state.limit}
         totalCountrys={this.state.countrys.length}
         paginate={paginate}/>

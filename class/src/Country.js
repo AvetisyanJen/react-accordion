@@ -5,6 +5,7 @@ constructor(props){
     super(props)
 this.state={ situation:false}
 
+
 }
 
 render(){
@@ -13,19 +14,19 @@ render(){
     }
     return(<>
     <ul className='list-group mb-4'></ul>
-     {this.props.countrys.map((elm,id)=>{
-          return <li onClick={()=>{this.setState({situation:!this.state.situation})}}
-          key={id} className='list-group-item'>
-            {elm.name}
+    
+         <li onClick={()=>{this.setState({situation:!this.state.situation})}}
+        className='list-group-item'>
+            {this.props.name}
            {this.state.situation ? <i className='fas fa-times close home-btn'></i>: <i className='fa fa-chevron-down'></i>}
            <br/>
-           {this.state.situation && elm.capital}
+           {this.state.situation && this.props.capital}
           </li>
     
     
           
-        })
-    }
+        
+    
     <ul/>
     </>)
 }

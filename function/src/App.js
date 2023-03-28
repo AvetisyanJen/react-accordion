@@ -35,8 +35,9 @@ function App() {
          
         return(<>
         <div className='container mt-3'>
-      
-        <Country countrys={currentCountry} loading={loading}/>
+        {currentCountry.map((elm,id)=>{
+        return <Country key ={id} name={elm.name} capital={elm.capital}loading={loading}/>
+})}
         <Pagination   limit={limit}
         totalCountrys={countrys.length}
         paginate={paginate}/> 

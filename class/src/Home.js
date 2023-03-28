@@ -55,7 +55,7 @@ class Home extends Component{
         <div className='container mt-3'>
         {currentCountry.map((value, index)=>{
           return(
-       <Country key ={id} name={value.name} capital={value.capital} loading={this.state.loading}/>
+       <Country key ={index} name={value.name} capital={value.capital} loading={this.state.loading}/>
           )
         })}
        <Pagination   limit={this.state.limit}
